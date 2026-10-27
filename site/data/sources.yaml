@@ -1,0 +1,1631 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# DATA SOURCES — the only file you need to edit to add, change, or remove a source.
+#
+# To ADD a source: copy the TEMPLATE block below, paste it anywhere in the list
+# (order doesn't matter; the site sorts alphabetically), and fill it in.
+# To REMOVE a source: delete its whole block (from "- name:" to the next "- name:").
+#
+# TEMPLATE
+# - name: Full name of the dataset
+#   abbr: SHORT             # optional abbreviation students might search for
+#   url: https://...        # main link (the data or its landing page)
+#   description: "One or two plain-language sentences on what it measures."
+#   topics: [us-elections]  # one or more slugs from data/topics.yaml
+#   units: [people]         # people, countries, states, events, elections, officials, policies, portal
+#   access: free            # free, registration, library, browse
+#   coverage: "United States, 1948–present"   # optional: where and when
+#   keywords: [turnout, vote choice]          # words a student might type
+#   links:                  # optional extra links
+#     - { label: Codebook, url: "https://..." }
+#   note: "Optional tip shown in small print."
+#
+# Tips: wrap any text containing a colon (:) in "double quotes".
+# Keep keywords lowercase. Indentation must use spaces, not tabs.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ═══ U.S. ELECTIONS & CAMPAIGNS ═══
+
+- name: American National Election Studies
+  abbr: ANES
+  url: https://electionstudies.org/
+  description: "The longest-running academic survey of American voters: turnout, vote choice, party identification, political knowledge, and attitudes in every presidential and many midterm elections."
+  topics: [us-elections, us-opinion]
+  units: [people]
+  access: registration
+  coverage: "United States, 1948–present"
+  keywords: [voting, turnout, vote choice, party identification, partisanship, ideology, feeling thermometer, political knowledge, trust in government, polarization, panel survey]
+
+- name: Cooperative Election Study
+  abbr: CES / CCES
+  url: https://cces.gov.harvard.edu/
+  description: "Very large (50,000+ respondents) online survey run by YouGov each fall. A pre-election wave covers attitudes, demographics, and vote intentions; a post-election wave covers how people voted. Large enough to study individual states and congressional districts."
+  topics: [us-elections, us-opinion]
+  units: [people]
+  access: free
+  coverage: "United States, 2006–present"
+  keywords: [voting, turnout, vote choice, roll call votes, congressional district, party identification, ideology, validated vote, policy preferences, cooperative congressional election study]
+  note: "Formerly called the Cooperative Congressional Election Study (CCES)."
+
+- name: National Annenberg Election Survey
+  abbr: NAES
+  url: https://www.annenbergpublicpolicycenter.org/political-communication/naes/
+  description: "Rolling cross-section surveys tracking attitudes about candidates, issues, media exposure, and the traits Americans want in a president during campaigns."
+  topics: [us-elections, us-opinion]
+  units: [people]
+  access: free
+  coverage: "United States, presidential campaigns 2000, 2004, 2008"
+  keywords: [campaign, media exposure, candidate traits, debates, advertising, rolling cross-section]
+
+- name: MIT Election Data and Science Lab
+  abbr: MEDSL
+  url: https://electionlab.mit.edu/data
+  description: "Clean, downloadable U.S. election returns at the state, county, and precinct level for presidential, Senate, House, and state offices."
+  topics: [us-elections, us-states]
+  units: [elections, states]
+  access: free
+  coverage: "United States, 1976–present (varies by office)"
+  keywords: [election results, vote share, county returns, precinct returns, house elections, senate elections, presidential elections, turnout, election administration]
+
+- name: CQ Voting and Elections Collection
+  url: https://oakland.libguides.com/az/databases
+  description: "Reference articles plus election results that can be filtered by candidate, office, locality, and race type over time."
+  topics: [us-elections]
+  units: [elections]
+  access: library
+  coverage: "United States, historical to present"
+  keywords: [election results, primaries, parties, campaigns, governors, house elections, senate elections]
+  note: "Subscription database. Search for it by name in the OU Libraries A–Z database list."
+
+- name: Polling the Nations
+  url: https://oakland.libguides.com/az/databases
+  description: "Searchable question-by-question results (percentages) from public opinion polls in the U.S. and about 100 other countries."
+  topics: [us-opinion, world-opinion]
+  units: [people]
+  access: library
+  coverage: "United States and ~100 countries, 1986–present"
+  keywords: [poll results, question wording, topline, public opinion trends]
+  note: "Subscription database. Search for it by name in the OU Libraries A–Z database list. Gives percentages, not respondent-level data."
+
+- name: The American Presidency Project
+  url: https://www.presidency.ucsb.edu/statistics
+  description: "Data on the presidency: presidential approval, relations with Congress, vetoes, executive orders, public appearances, addresses, and presidential elections, plus a searchable archive of presidential documents."
+  topics: [us-congress, us-elections]
+  units: [officials]
+  access: free
+  coverage: "United States, 1789–present"
+  keywords: [presidential approval, executive orders, vetoes, speeches, state of the union, signing statements, presidential elections, electoral college]
+
+- name: PollingReport
+  url: https://www.pollingreport.com/
+  description: "Compiles recent results from major national polls on elections, the president, and policy issues."
+  topics: [us-opinion, us-elections]
+  units: [people]
+  access: browse
+  coverage: "United States, recent years"
+  keywords: [poll results, presidential approval, issue polls, horse race]
+
+- name: SDA (Survey Documentation and Analysis) at Berkeley
+  abbr: SDA
+  url: https://sda.berkeley.edu/
+  description: "Run tables and pull custom extracts from the ANES, General Social Survey, and other public opinion studies right in the browser — no statistical software needed."
+  topics: [us-opinion, us-elections]
+  units: [people]
+  access: free
+  coverage: "United States"
+  keywords: [crosstabs, online analysis, gss, anes, extract, beginner friendly]
+
+- name: Database on Ideology, Money in Politics, and Elections
+  abbr: DIME
+  url: https://data.stanford.edu/dime
+  description: "Campaign contribution records, candidate characteristics, election outcomes, and ideology scores (CFscores) for candidates, donors, and organizations at the federal and state levels."
+  topics: [us-elections, us-congress, us-states]
+  units: [officials, people]
+  access: free
+  coverage: "United States, 1979–present"
+  keywords: [campaign finance, donations, contributions, cfscores, ideology, pacs, interest groups, state legislators, candidates]
+
+- name: International IDEA Data Tools
+  abbr: IDEA
+  url: https://www.idea.int/data-tools
+  description: "Cross-national data on electoral rules, how elections are run, voter turnout, gender quotas, political finance rules, and direct democracy."
+  topics: [institutions, parties]
+  units: [countries, elections]
+  access: free
+  coverage: "Worldwide, 1945–present"
+  keywords: [voter turnout, electoral system, gender quotas, compulsory voting, political finance, referendums, direct democracy, women in parliament]
+  links:
+    - { label: Voter Turnout Database, url: "https://www.idea.int/data-tools/data/voter-turnout-database" }
+
+# ═══ CONGRESS & THE PRESIDENCY ═══
+
+- name: Charles Stewart's Congressional Data
+  url: https://web.mit.edu/17.251/www/data_page.html
+  description: "A hub of links to classic data on Congress, including committee assignments (Garrison Nelson), candidate quality (David Lublin), and candidate positioning (Ansolabehere, Snyder, and Stewart)."
+  topics: [us-congress]
+  units: [officials]
+  access: free
+  coverage: "United States, historical"
+  keywords: [committee assignments, committees, candidate quality, candidate positioning, house, senate, seniority]
+
+- name: Congressional Bills Project
+  url: https://www.maxwell.syr.edu/research/campbell-public-affairs-institute/united-states-policy-agendas-project/datasets-and-codebooks/congressional-bills
+  description: "Over 400,000 public and private bills introduced in the U.S. House and Senate, with each bill's title, policy topic, progress through Congress, and sponsor."
+  topics: [us-congress]
+  units: [officials]
+  access: free
+  coverage: "United States, 1947–2012"
+  keywords: [bills, legislation, sponsorship, cosponsors, policy topic, lawmaking, bill passage]
+  note: "Hosted by the U.S. Policy Agendas Project. The old congressionalbills.org address no longer belongs to the project — don't use it."
+
+- name: Voteview (DW-NOMINATE and Roll Call Votes)
+  abbr: DW-NOMINATE
+  url: https://voteview.com/
+  description: "Every roll call vote in Congress plus the standard ideology scores (DW-NOMINATE) for every member of the House and Senate."
+  topics: [us-congress]
+  units: [officials]
+  access: free
+  coverage: "United States, 1789–present"
+  keywords: [roll call votes, ideology, polarization, nominate, liberal conservative, legislators, party unity, voting records]
+
+- name: CQ Congress Collection
+  url: https://oakland.libguides.com/az/databases
+  description: "Data and reference material on legislation, members, votes, and the history and powers of Congress."
+  topics: [us-congress]
+  units: [officials]
+  access: library
+  coverage: "United States, historical to present"
+  keywords: [legislation, members of congress, key votes, committees, interest group ratings]
+  note: "Subscription database. Search for it by name in the OU Libraries A–Z database list."
+
+- name: Washington Representatives Study
+  url: https://www.icpsr.umich.edu/web/ICPSR/studies/35309
+  description: "Thousands of organizations active in Washington politics — what interests they represent, what kind of members they have, and how they lobby."
+  topics: [us-congress]
+  units: [officials]
+  access: registration
+  coverage: "United States, 1981–2011"
+  keywords: [interest groups, lobbying, organizations, advocacy, business groups, unions]
+
+# ═══ STATE POLITICS & POLICY ═══
+
+- name: Dynamic Democracy (Caughey & Warshaw)
+  url: http://www.chriswarshaw.com/data.php
+  description: "Yearly estimates of policy liberalism, public opinion, and mass ideology in every U.S. state, with an interactive app for quick visualizations and direct data downloads."
+  topics: [us-states, us-opinion]
+  units: [states]
+  access: free
+  coverage: "U.S. states, 1936–present"
+  keywords: [policy liberalism, state ideology, mass ideology, public opinion, responsiveness, state policy]
+  links:
+    - { label: Devin Caughey's downloads, url: "https://devincaughey.github.io/research/" }
+
+- name: Correlates of State Policy
+  abbr: CSPP
+  url: https://ippsr.msu.edu/public-policy/correlates-state-policy
+  description: "One big state-year file pulling together 2,000+ variables on policy, politics, demographics, and the economy in the 50 states. An easy one-stop dataset for state politics papers."
+  topics: [us-states]
+  units: [states]
+  access: free
+  coverage: "U.S. states, 1900–present (varies by variable)"
+  keywords: [state policy, policy adoption, minimum wage, taxes, abortion, partisan control, unified government, income, unemployment, demographics, state-year panel, beginner friendly]
+
+- name: Carl Klarner's State Politics Data
+  url: https://www.klarnerpolitics.org/datasets-1
+  description: "State legislative election returns, partisan composition of state legislatures, governors, and state economic data."
+  topics: [us-states, us-elections]
+  units: [states, elections]
+  access: free
+  coverage: "U.S. states, 1937–present (varies)"
+  keywords: [state legislative elections, partisan composition, governors, state legislatures, party control]
+
+- name: Voting Rights Lab State Tracker
+  url: https://tracker.votingrightslab.org/states
+  description: "Tracks state bills and laws on voting rights and voter access — voter ID, mail voting, registration, and more."
+  topics: [us-states, us-elections]
+  units: [policies, states]
+  access: browse
+  coverage: "U.S. states, recent years"
+  keywords: [voting rights, voter id, mail voting, absentee ballots, voter registration, election law, early voting]
+
+- name: National Conference of State Legislatures
+  abbr: NCSL
+  url: https://www.ncsl.org/elections-and-campaigns
+  description: "Wide-ranging comparisons of state laws and state legislatures, especially on elections and campaigns."
+  topics: [us-states, us-elections]
+  units: [states, policies]
+  access: browse
+  coverage: "U.S. states, current"
+  keywords: [state laws, election law, legislatures, term limits, legislator pay, redistricting, partisan composition]
+
+- name: PlanScore
+  url: https://planscore.org/
+  description: "Measures of partisan gerrymandering (efficiency gap, partisan bias, and more) for congressional and state legislative district maps."
+  topics: [us-states, us-elections]
+  units: [states]
+  access: free
+  coverage: "U.S. states, 1972–present"
+  keywords: [gerrymandering, redistricting, efficiency gap, districts, partisan bias, maps]
+
+# ═══ U.S. PUBLIC OPINION ═══
+
+- name: Pew Research Center Datasets
+  abbr: Pew
+  url: https://www.pewresearch.org/datasets/
+  description: "Respondent-level survey data from Pew on U.S. politics, media, religion, technology, and science, plus global attitudes surveys."
+  topics: [us-opinion, world-opinion]
+  units: [people]
+  access: registration
+  coverage: "United States and worldwide, 1990s–present"
+  keywords: [public opinion, polarization, religion, media use, technology, global attitudes, partisanship, survey]
+
+- name: General Social Survey
+  abbr: GSS
+  url: https://gss.norc.org/get-the-data.html
+  description: "Repeated national survey of American attitudes and behaviors: gender and marriage, civil liberties, political beliefs and voting, work, religion, and current affairs. Great for studying change over decades."
+  topics: [us-opinion]
+  units: [people]
+  access: free
+  coverage: "United States, 1972–present"
+  keywords: [attitudes, trust, religion, civil liberties, gender roles, confidence in institutions, social trust, ideology, abortion, same-sex marriage, race]
+
+- name: Roper Center for Public Opinion Research
+  abbr: Roper
+  url: https://ropercenter.cornell.edu/
+  description: "The largest archive of public opinion polls — abortion, defense spending, guns, health, immigration, elections, and much more. Roper iPoll searches individual poll questions."
+  topics: [us-opinion, world-opinion]
+  units: [people]
+  access: library
+  coverage: "United States and worldwide, 1935–present"
+  keywords: [polls, gallup, question search, ipoll, trends, abortion, guns, immigration]
+  note: "Roper iPoll requires a subscription; ask OU Libraries about access."
+  links:
+    - { label: Roper iPoll, url: "https://ropercenter.cornell.edu/ipoll/" }
+
+- name: KFF Polling
+  abbr: KFF
+  url: https://www.kff.org/polling/
+  description: "Kaiser Family Foundation surveys on the public's opinions, knowledge, and experiences with health care and health policy."
+  topics: [us-opinion, health]
+  units: [people]
+  access: free
+  coverage: "United States, 1990s–present"
+  keywords: [health care, affordable care act, obamacare, medicare, medicaid, vaccines, health policy opinion]
+
+# ═══ CENSUS, DEMOGRAPHICS & FEDERAL STATISTICS ═══
+
+- name: IPUMS USA
+  url: https://usa.ipums.org/usa/
+  description: "Harmonized U.S. census and American Community Survey microdata — individual people and households, ready to make custom extracts."
+  topics: [us-demographics]
+  units: [people]
+  access: registration
+  coverage: "United States, censuses 1790–2020 and ACS 2000–present"
+  keywords: [census, american community survey, acs, income, education, occupation, race, ethnicity, immigration, household, microdata]
+
+- name: IPUMS Health Surveys
+  url: https://healthsurveys.ipums.org/
+  description: "Individual-level data from the National Health Interview Survey (NHIS) and Medical Expenditure Panel Survey (MEPS) on health status and access to care."
+  topics: [us-demographics, health]
+  units: [people]
+  access: registration
+  coverage: "United States, 1963–present"
+  keywords: [health insurance, health status, access to care, medical expenditures, nhis, meps]
+
+- name: IPUMS Higher Ed
+  url: https://highered.ipums.org/highered/
+  description: "Surveys of the U.S. science and engineering (STEM) workforce."
+  topics: [us-demographics]
+  units: [people]
+  access: registration
+  coverage: "United States, 1993–2013"
+  keywords: [stem, scientists, engineers, education, workforce, college graduates]
+
+- name: Statistical Abstract of the United States
+  url: https://www.census.gov/library/publications/time-series/statistical_abstracts.html
+  description: "The classic annual compendium of U.S. statistics across a broad range of subjects."
+  topics: [us-demographics]
+  units: [states]
+  access: browse
+  coverage: "United States, 1878–2012"
+  keywords: [statistics, compendium, tables, population, economy, government finances]
+  note: "The Census Bureau stopped publishing it after the 2012 edition; older editions are archived here."
+
+- name: Historical Statistics of the United States
+  url: https://hsus.cambridge.org/
+  description: "Long-run historical statistics on the U.S., from population and demographics to the economy, government, and voting patterns."
+  topics: [us-demographics]
+  units: [states]
+  access: library
+  coverage: "United States, colonial times–2000s"
+  keywords: [historical statistics, long run, population, economy, voting, government]
+  note: "Subscription; check the OU Libraries A–Z database list."
+
+- name: Vital Statistics on American Politics
+  url: https://oakland.libguides.com/az/databases
+  description: "Tables on elections and parties, public opinion and voting, the media, the three branches of government, and foreign, military, social, and economic policy."
+  topics: [us-demographics, us-elections, us-congress]
+  units: [states]
+  access: library
+  coverage: "United States"
+  keywords: [tables, elections, parties, media, congress, presidency, courts, compendium]
+  note: "Published by CQ Press. Check the OU Libraries catalog or A–Z list."
+
+- name: data.census.gov
+  url: https://data.census.gov/
+  description: "The Census Bureau's official tool for social, demographic, and economic statistics from the decennial census and American Community Survey, down to the county and tract level."
+  topics: [us-demographics]
+  units: [states]
+  access: free
+  coverage: "United States"
+  keywords: [census, american community survey, acs, population, income, poverty, race, county, tract, demographics]
+  note: "Replaces the retired American FactFinder."
+
+- name: U.S. Census Bureau
+  url: https://www.census.gov/
+  description: "Main portal for all Census Bureau data products and topic pages."
+  topics: [us-demographics]
+  units: [portal]
+  access: free
+  coverage: "United States"
+  keywords: [census, population, economy, housing, business]
+
+- name: Data.gov
+  url: https://data.gov/
+  description: "The federal government's open-data catalog: agriculture, climate, consumer, finance, health, local government, public safety, and more."
+  topics: [us-demographics]
+  units: [portal]
+  access: free
+  coverage: "United States"
+  keywords: [open data, federal data, government data, agriculture, climate, public safety]
+
+- name: USAGov Data and Statistics
+  url: https://www.usa.gov/census-data
+  description: "Federal portal pointing to statistics from across the U.S. government."
+  topics: [us-demographics]
+  units: [portal]
+  access: free
+  coverage: "United States"
+  keywords: [federal statistics, portal]
+
+- name: National Health and Nutrition Examination Survey
+  abbr: NHANES
+  url: https://wwwn.cdc.gov/nchs/nhanes/Search/default.aspx
+  description: "CDC surveys combining interviews and physical exams on health and nutrition."
+  topics: [health, us-demographics]
+  units: [people]
+  access: free
+  coverage: "United States, 1999–present"
+  keywords: [health, nutrition, obesity, diet, cdc, physical exam]
+
+- name: KFF State Health Facts
+  url: https://www.kff.org/state-health-facts/
+  description: "Health indicators — insurance, Medicaid, spending, outcomes — plus demographic and economic indicators, by state."
+  topics: [health, us-states]
+  units: [states]
+  access: free
+  coverage: "U.S. states, recent years"
+  keywords: [health insurance, uninsured, medicaid, health spending, state health, demographics]
+
+# ═══ GUN LAWS & GUN VIOLENCE ═══
+
+- name: Giffords Law Center Gun Violence Statistics
+  url: https://giffords.org/lawcenter/resources/gun-violence-statistics/
+  description: "Statistics and fact sheets on gun violence in the U.S., with summaries of related laws."
+  topics: [guns]
+  units: [states]
+  access: browse
+  coverage: "United States"
+  keywords: [gun violence, firearm deaths, gun laws, suicide, homicide]
+  note: "Produced by an advocacy organization; check the original sources it cites."
+
+- name: RAND State Firearm Law Navigator
+  url: https://www.rand.org/research/gun-policy/law-navigator.html
+  description: "Researcher-coded database of state firearm laws over time — background checks, permit-to-carry, stand-your-ground, and more — with a downloadable dataset."
+  topics: [guns, us-states]
+  units: [policies, states]
+  access: free
+  coverage: "U.S. states, 1979–present"
+  keywords: [gun laws, firearm laws, background checks, concealed carry, stand your ground, state policy]
+
+- name: World Population Review — Gun Laws by State
+  url: https://worldpopulationreview.com/state-rankings/gun-laws-by-state
+  description: "Downloadable state-level table summarizing gun laws. The same site has state murder rates."
+  topics: [guns, us-states]
+  units: [states]
+  access: free
+  coverage: "U.S. states, current"
+  keywords: [gun laws, murder rate, homicide, state rankings, beginner friendly]
+  links:
+    - { label: Murder rate by state, url: "https://worldpopulationreview.com/state-rankings/murder-rate-by-state" }
+  note: "A convenience site; cite the underlying government sources in a paper."
+
+- name: Firearm Ownership and Domestic vs. Nondomestic Homicide (Siegel et al.)
+  url: https://www.ajpmonline.org/article/S0749-3797(19)30197-7/addons
+  description: "Journal article (American Journal of Preventive Medicine, 2019) with state-level data on gun ownership and homicides."
+  topics: [guns, us-states]
+  units: [states]
+  access: free
+  coverage: "U.S. states"
+  keywords: [gun ownership, homicide, domestic violence, replication data]
+
+- name: Gun Violence Archive
+  abbr: GVA
+  url: https://www.gunviolencearchive.org/
+  description: "Incident-level records of gun violence in the U.S., including downloadable lists of mass shootings (4+ shot)."
+  topics: [guns]
+  units: [events]
+  access: free
+  coverage: "United States, 2013–present"
+  keywords: [mass shootings, shootings, gun deaths, incidents, police shootings]
+  links:
+    - { label: Mass shootings reports, url: "https://www.gunviolencearchive.org/reports/mass-shooting" }
+
+# ═══ PRACTICE DATA ═══
+
+- name: FiveThirtyEight Data
+  url: https://data.fivethirtyeight.com/
+  description: "The data behind FiveThirtyEight's stories — polls, endorsements, candidate data, and sports predictions (NFL, MLB, NBA)."
+  topics: [practice, us-elections]
+  units: [portal]
+  access: free
+  coverage: "United States, varies"
+  keywords: [polls, endorsements, sports, nfl, nba, mlb, beginner friendly, story data]
+  note: "FiveThirtyEight closed in 2025; its existing data files remain available."
+
+- name: NBA Player Tracking Data
+  url: https://github.com/dblackrun
+  description: "Code and data for NBA play-by-play and player tracking — good for practicing data skills on a fun topic."
+  topics: [practice]
+  units: [people]
+  access: free
+  coverage: "NBA"
+  keywords: [basketball, nba, sports, play by play]
+
+- name: Lahman Baseball Database
+  url: https://sabr.org/lahman-database/
+  description: "Complete batting, pitching, fielding, and team statistics for Major League Baseball. Also available as the Lahman R package."
+  topics: [practice]
+  units: [people]
+  access: free
+  coverage: "MLB, 1871–present"
+  keywords: [baseball, mlb, sports, statistics, r package]
+  links:
+    - { label: Lahman R package, url: "https://cran.r-project.org/package=Lahman" }
+
+# ═══ COURTS, LAW & CONSTITUTIONS ═══
+
+- name: The Supreme Court Database
+  abbr: SCDB
+  url: http://scdb.wustl.edu/
+  description: "Over 200 pieces of information about every case decided by the U.S. Supreme Court: issue area, how each justice voted, ideological direction of the decision, and more."
+  topics: [courts]
+  units: [officials]
+  access: free
+  coverage: "United States, 1791–present"
+  keywords: [supreme court, justices, decisions, judicial votes, cases, judicial ideology, precedent]
+
+- name: Judicial Research Initiative
+  abbr: JuRI
+  url: http://artsandsciences.sc.edu/poli/juri/
+  description: "Repository of judicial politics data, including decisions of the U.S. Courts of Appeals and of high courts in other countries."
+  topics: [courts]
+  units: [officials]
+  access: free
+  coverage: "United States and selected countries"
+  keywords: [courts of appeals, judges, judicial decisions, high courts, comparative courts]
+
+- name: Comparative Constitutions Project
+  abbr: CCP
+  url: https://comparativeconstitutionsproject.org/
+  description: "Coded features of national constitutions since 1789 — rights, executive powers, term limits, amendment rules — plus thousands of constitutional texts."
+  topics: [courts, institutions]
+  units: [countries, policies]
+  access: free
+  coverage: "Worldwide, 1789–present"
+  keywords: [constitutions, rights, term limits, executive powers, judicial review, constitutional design, constitute]
+
+# ═══ PUBLIC OPINION AROUND THE WORLD ═══
+
+- name: World Values Survey
+  abbr: WVS
+  url: https://www.worldvaluessurvey.org/
+  description: "Nationally representative surveys in nearly 100 countries on values and beliefs — religion, gender, democracy, trust, tolerance — repeated in waves."
+  topics: [world-opinion]
+  units: [people]
+  access: registration
+  coverage: "~100 countries, 1981–present"
+  keywords: [values, religion, trust, support for democracy, tolerance, gender equality, postmaterialism, happiness]
+
+- name: European Values Study
+  abbr: EVS
+  url: https://europeanvaluesstudy.eu/
+  description: "Large cross-national, longitudinal survey of how Europeans think about family, work, religion, politics, and society."
+  topics: [world-opinion]
+  units: [people]
+  access: registration
+  coverage: "Europe, 1981–present"
+  keywords: [values, religion, family, work, europe, trust]
+
+- name: International Social Survey Programme
+  abbr: ISSP
+  url: https://issp.org/
+  description: "A common survey fielded in dozens of countries each year, with a rotating module on a different topic (role of government, religion, national identity, environment, etc.)."
+  topics: [world-opinion]
+  units: [people]
+  access: registration
+  coverage: "40+ countries, 1985–present"
+  keywords: [role of government, national identity, religion, environment, social inequality, work orientations]
+
+- name: Eurobarometer
+  url: https://europa.eu/eurobarometer/
+  description: "The European Commission's regular surveys of Europeans' attitudes on the EU and a wide range of topics."
+  topics: [world-opinion]
+  units: [people]
+  access: free
+  coverage: "EU member and candidate states, 1974–present"
+  keywords: [european union, eu support, euroscepticism, attitudes, europe]
+
+- name: Latinobarómetro
+  url: https://www.latinobarometro.org/
+  description: "Annual surveys of attitudes toward democracy, institutions, and the economy in Latin America."
+  topics: [world-opinion]
+  units: [people]
+  access: registration
+  coverage: "18 Latin American countries, 1995–present"
+  keywords: [support for democracy, trust in institutions, latin america, corruption, economy]
+
+- name: AmericasBarometer (LAPOP)
+  abbr: LAPOP
+  url: https://www.vanderbilt.edu/cgd/americasbarometer/
+  description: "Surveys of democratic values and behaviors across the Americas — corruption victimization, crime, trust, support for democracy."
+  topics: [world-opinion]
+  units: [people]
+  access: registration
+  coverage: "The Americas, 2004–present"
+  keywords: [latin america, corruption, crime victimization, support for democracy, trust, political tolerance]
+  note: "LAPOP is now part of Vanderbilt's Center for Global Democracy."
+
+- name: Asian Barometer
+  url: https://asianbarometer.org/
+  description: "Surveys of political attitudes, values, and democracy in East and South Asia."
+  topics: [world-opinion]
+  units: [people]
+  access: registration
+  coverage: "~18 Asian countries, 2001–present"
+  keywords: [asia, democracy, political values, trust, governance]
+  note: "You need to apply for access to most of the data."
+
+- name: Afrobarometer
+  url: https://www.afrobarometer.org/
+  description: "Surveys of attitudes toward democracy, governance, the economy, and society across Africa. Includes an online analysis tool."
+  topics: [world-opinion]
+  units: [people]
+  access: free
+  coverage: "~40 African countries, 1999–present"
+  keywords: [africa, democracy, corruption, governance, trust, ethnicity, service delivery]
+
+- name: Arab Barometer
+  url: https://www.arabbarometer.org/
+  description: "Surveys of political and social attitudes in the Middle East and North Africa."
+  topics: [world-opinion]
+  units: [people]
+  access: free
+  coverage: "Middle East & North Africa, 2006–present"
+  keywords: [middle east, arab world, religion, democracy, gender, governance]
+
+- name: IPUMS International
+  url: https://international.ipums.org/international/index.shtml
+  description: "Harmonized census microdata (individual persons and households) from 100+ countries."
+  topics: [world-opinion, country-info, migration]
+  units: [people]
+  access: registration
+  coverage: "100+ countries, 1960–present"
+  keywords: [census, microdata, households, education, employment, migration, fertility]
+
+- name: Chicago Council Surveys
+  url: https://globalaffairs.org/research/public-opinion-survey
+  description: "Surveys of American opinion on foreign policy — the global economy, security, alliances, trade, and more."
+  topics: [us-opinion, world-opinion]
+  units: [people]
+  access: free
+  coverage: "United States, 1974–present"
+  keywords: [foreign policy, isolationism, trade, alliances, nato, military force]
+
+# ═══ PARLIAMENTS, CABINETS & ELECTORAL SYSTEMS ═══
+
+- name: ParlGov
+  url: https://www.parlgov.org/
+  description: "Parties, elections, and cabinets for all EU and most OECD democracies."
+  topics: [institutions, parties]
+  units: [elections, countries]
+  access: free
+  coverage: "37 democracies, 1900–present"
+  keywords: [cabinets, coalition governments, parties, election results, seats, party families, left right]
+
+- name: Who Governs Europe
+  url: https://whogoverns.eu/
+  description: "Cabinet composition and party system development in European democracies."
+  topics: [institutions]
+  units: [officials, countries]
+  access: free
+  coverage: "48 European states"
+  keywords: [cabinets, ministers, coalitions, party systems, europe]
+
+- name: WhoGov — Members of Cabinets Worldwide
+  abbr: WhoGov
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YTRCQE
+  description: "Every cabinet member (not parliament) in 170+ countries: name, gender, party, age, portfolio, and more."
+  topics: [institutions, leaders]
+  units: [officials]
+  access: free
+  coverage: "170+ countries, 1966–present"
+  keywords: [cabinet ministers, women in cabinet, gender, ministers, portfolios, elites]
+  links:
+    - { label: "Nyrup & Bramwell, APSR 2020", url: "https://doi.org/10.1017/S0003055420000490" }
+
+- name: Party Government Data Set (Seki–Williams update)
+  abbr: PGDS
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0UNUAM
+  description: "Composition, duration, and termination of governments in parliamentary democracies, extending the classic Woldendorp–Keman–Budge data, plus individual ministers' tenures."
+  topics: [institutions]
+  units: [officials, countries]
+  access: free
+  coverage: "Parliamentary democracies, 1945–2014"
+  keywords: [cabinets, government duration, coalition, ministers, government termination]
+
+- name: Comparative Study of Electoral Systems
+  abbr: CSES
+  url: https://cses.org/
+  description: "Post-election surveys from dozens of countries linked to data on each country's electoral institutions — ideal for studying how rules shape voters."
+  topics: [institutions, world-opinion]
+  units: [people]
+  access: free
+  coverage: "50+ countries, 1996–present"
+  keywords: [electoral systems, voting behavior, accountability, representation, vote choice, satisfaction with democracy]
+
+- name: Comparative Political Data Set
+  abbr: CPDS
+  url: https://cpds-data.org/
+  description: "Country-year political, institutional, and economic data for rich democracies — government partisanship, elections, social spending, and more."
+  topics: [institutions, welfare]
+  units: [countries]
+  access: free
+  coverage: "36 OECD/EU democracies, 1960–present"
+  keywords: [government partisanship, cabinet composition, social spending, unemployment, electoral fractionalization, veto points]
+
+- name: Veto Players Data (Tsebelis)
+  url: https://sites.lsa.umich.edu/tsebelis/data/veto-players-data/
+  description: "Composition of governments and number/ideological range of veto players in advanced industrial democracies."
+  topics: [institutions]
+  units: [countries]
+  access: free
+  coverage: "Advanced democracies"
+  keywords: [veto players, government composition, coalition, policy stability]
+
+- name: Democratic Electoral Systems Around the World (Bormann & Golder)
+  abbr: DES
+  url: https://mattgolder.com/elections
+  description: "Electoral system design for every legislative and presidential election in democracies, with the election as the unit of analysis."
+  topics: [institutions, parties]
+  units: [elections]
+  access: free
+  coverage: "Democracies, 1946–2020"
+  keywords: [electoral systems, proportional representation, majoritarian, district magnitude, presidential elections, legislative elections]
+
+- name: Database of Political Institutions
+  abbr: DPI
+  url: https://publications.iadb.org/en/database-political-institutions-2020-dpi2020
+  description: "Country-year data on checks and balances, government tenure and stability, party affiliation and ideology of the executive, and fragmentation of government and opposition parties."
+  topics: [institutions, regimes]
+  units: [countries]
+  access: free
+  coverage: "~180 countries, 1975–2020"
+  keywords: [checks and balances, executive party, ideology, fractionalization, presidential, parliamentary, electoral rules, tenure]
+
+# ═══ POLITICAL LEADERS ═══
+
+- name: Political Leaders' Affiliation Database
+  abbr: PLAD
+  url: https://plad.uni-goettingen.de/
+  description: "Birthplaces, ethnicity, education, and tenure of effective leaders in 177 countries."
+  topics: [leaders]
+  units: [officials]
+  access: free
+  coverage: "177 countries, 1989–2023"
+  keywords: [leaders, birthplace, ethnicity, education, favoritism, leader traits]
+  note: "Its site also lists other leader-trait datasets."
+
+- name: Archigos
+  url: http://ksgleditsch.com/archigos.html
+  description: "When and how every national leader entered and left office — regular, irregular (coup), death, and so on."
+  topics: [leaders]
+  units: [officials]
+  access: free
+  coverage: "Worldwide, 1875–2015"
+  keywords: [leaders, tenure, leader exit, coups, irregular removal, leader fate]
+
+- name: Global Leadership Project
+  abbr: GLP
+  url: https://dataverse.harvard.edu/dataverse/glp
+  description: "Data on government leaders worldwide — legislators, executives, judges, and informal power holders."
+  topics: [leaders]
+  units: [officials]
+  access: free
+  coverage: "Worldwide, ~2010"
+  keywords: [elites, legislators, judges, leaders, gender, education, ethnicity]
+
+- name: Executive Approval Project
+  abbr: EAP
+  url: https://executiveapproval.org/
+  description: "Comparable measures of public support for presidents and prime ministers over time."
+  topics: [leaders, world-opinion]
+  units: [countries]
+  access: free
+  coverage: "~60 countries, 1950s–present"
+  keywords: [executive approval, presidential approval, popularity, prime ministers]
+
+# ═══ ELECTIONS, PARTIES & POLICY AGENDAS ═══
+
+- name: Constituency-Level Elections Archive
+  abbr: CLEA
+  url: https://electiondataarchive.org/
+  description: "District-level results for about 1,900 lower-house elections in 170 countries."
+  topics: [parties]
+  units: [elections]
+  access: free
+  coverage: "~170 countries, 1800s–present"
+  keywords: [election results, district results, constituency, vote share, turnout, legislative elections]
+
+- name: European Election Database
+  abbr: EED
+  url: https://www.sikt.no/en/
+  description: "Regional-level election results for European countries."
+  topics: [parties]
+  units: [elections]
+  access: free
+  coverage: "~35 European countries, 1990–"
+  keywords: [regional election results, europe, parliamentary elections, european parliament]
+  note: "Run by Sikt (formerly NSD); the old nsd.uib.no address no longer works. Search the Sikt site for the database."
+
+- name: National Elections Across Democracy and Autocracy
+  abbr: NELDA
+  url: https://nelda.co/
+  description: "Detailed information on every national election event — whether opposition was allowed, boycotts, fraud allegations, monitors, protests."
+  topics: [parties, regimes]
+  units: [elections]
+  access: free
+  coverage: "Worldwide, 1945–2020"
+  keywords: [elections, election fraud, boycotts, election monitors, opposition, competitive authoritarianism, protests]
+
+- name: Comparative Agendas Project
+  abbr: CAP
+  url: https://www.comparativeagendas.net/
+  description: "Tracks what governments pay attention to — bills, hearings, speeches, budgets — coded into common policy topics across countries. Includes the U.S. Policy Agendas Project."
+  topics: [parties, us-congress]
+  units: [policies]
+  access: free
+  coverage: "20+ countries, 1940s–present"
+  keywords: [policy agendas, issue attention, hearings, bills, budgets, speeches, policy topics]
+  links:
+    - { label: U.S. Policy Agendas Project, url: "https://www.comparativeagendas.net/project/us" }
+
+- name: Manifesto Project
+  abbr: MARPOR
+  url: https://manifesto-project.wzb.eu/
+  description: "Parties' policy positions from content analysis of their election manifestos — left–right placement and dozens of issue categories."
+  topics: [parties]
+  units: [elections]
+  access: registration
+  coverage: "50+ countries, 1945–present"
+  keywords: [party positions, left right, rile, manifestos, issue emphasis, ideology, cmp]
+
+- name: Party Facts
+  url: https://partyfacts.herokuapp.com/
+  description: "A hub linking political parties across major datasets, with information on each party and its history."
+  topics: [parties, collections]
+  units: [elections]
+  access: free
+  coverage: "Worldwide"
+  keywords: [parties, party identifiers, linking datasets, crosswalk]
+
+- name: Integrated Party Organization Dataset
+  abbr: IPOD
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/PE8TWP
+  description: "Combines several datasets on party organization, performance, positions, and electoral systems into one source."
+  topics: [parties]
+  units: [elections]
+  access: free
+  coverage: "Western democracies"
+  keywords: [party organization, membership, party positions, leadership selection]
+
+# ═══ DEMOCRACY & AUTOCRACY ═══
+
+- name: Varieties of Democracy
+  abbr: V-Dem
+  url: https://www.v-dem.net/data/the-v-dem-dataset/
+  description: "The most detailed democracy data available: hundreds of indicators and indices of electoral, liberal, participatory, deliberative, and egalitarian democracy, plus measures of corruption, media freedom, civil society, and more."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "~200 countries, 1789–present"
+  keywords: [democracy, polyarchy, v2x_polyarchy, liberal democracy, corruption, media freedom, press freedom, civil society, judicial independence, regimes of the world, autocratization, backsliding]
+
+- name: Freedom House — Freedom in the World
+  url: https://freedomhouse.org/report/freedom-world
+  description: "Annual ratings of political rights and civil liberties (Free, Partly Free, Not Free), covering electoral process, pluralism, functioning of government, free expression, rule of law, and individual rights."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "~210 countries and territories, 1973–present"
+  keywords: [freedom, political rights, civil liberties, democracy, free partly free not free]
+
+- name: The Polity Project
+  abbr: Polity
+  url: https://www.systemicpeace.org/polityproject.html
+  description: "The classic –10 to +10 scale of democratic and autocratic authority in governing institutions."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "~167 countries, 1800–2018"
+  keywords: [polity2, polity score, democracy, autocracy, regime change, executive constraints]
+
+- name: Democracy and Dictatorship (Cheibub, Gandhi & Vreeland; Bjørnskov & Rode update)
+  abbr: DD
+  url: http://www.christianbjoernskov.com/bjoernskovrodedata/
+  description: "Classifies regimes as democracies or dictatorships; democracies as parliamentary, semi-presidential, or presidential; dictatorships as military, civilian, or royal. The Bjørnskov–Rode update extends the original data."
+  topics: [regimes, institutions]
+  units: [countries]
+  access: free
+  coverage: "~200 countries, 1950–present"
+  keywords: [democracy dictatorship, binary democracy, military regime, monarchy, presidential, parliamentary, semi-presidential, regime type, coups]
+
+- name: Autocratic Regimes Data (Geddes, Wright & Frantz)
+  abbr: GWF
+  url: https://sites.psu.edu/dictators/
+  description: "The 280 autocratic regimes that existed 1946–2010: their type (personalist, military, party, monarchy), how they fell, how violent the transition was, and what came next."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1946–2010"
+  keywords: [autocracy, dictatorship, personalist, military regime, single party, regime collapse, transitions]
+
+- name: Authoritarian Regimes Dataset (Wahman, Teorell & Hadenius)
+  abbr: ARD
+  url: https://sites.google.com/site/authoritarianregimedataset/
+  description: "Classification of authoritarian regime types — monarchy, military, one-party, multiparty — worldwide."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1972–2014"
+  keywords: [authoritarian regimes, monarchy, military, one party, multiparty, regime type]
+
+- name: Political Regimes of the World (Anckar & Fredriksson)
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AK8NVX
+  description: "An updated classification of all regime types — democracies and types of autocracies."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1800–2024"
+  keywords: [regime type, democracy, autocracy, monarchy, military, presidential, parliamentary]
+
+- name: Quality of Government Data
+  abbr: QoG
+  url: https://www.gu.se/en/quality-government/qog-data
+  description: "Huge merged country-year datasets (2,000+ variables) on governance, corruption, democracy, the economy, and society, drawn from 100+ sources. Probably the easiest single place to start a cross-national paper."
+  topics: [regimes, country-info, collections]
+  units: [countries]
+  access: free
+  coverage: "~200 countries, 1946–present"
+  keywords: [governance, corruption, rule of law, democracy, gdp, inequality, education, merged data, country-year panel, beginner friendly]
+
+- name: PRS Group / International Country Risk Guide
+  abbr: ICRG
+  url: https://www.prsgroup.com/
+  description: "Ratings of political, economic, and financial risk to international business — corruption, bureaucratic quality, law and order, and more."
+  topics: [regimes, economy]
+  units: [countries]
+  access: library
+  coverage: "140 countries, 1984–present"
+  keywords: [political risk, corruption, bureaucratic quality, law and order, investment risk, icrg]
+  note: "Commercial data. Ask OU Libraries; many ICRG indicators also appear in the QoG dataset."
+
+- name: Our World in Data — Democracy
+  abbr: OWID
+  url: https://ourworldindata.org/democracy
+  description: "Major democracy measures (V-Dem, Polity, Freedom House, and others) side by side in user-friendly charts. The Data Explorer lets you download clean files."
+  topics: [regimes]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1800s–present"
+  keywords: [democracy, charts, data explorer, beginner friendly, compare measures]
+
+- name: Democratic Erosion Event Dataset
+  abbr: DEED
+  url: https://democratic-erosion.org/
+  description: "Event-level data on episodes of democratic erosion and backsliding, with guidance on how other democracy indicators capture erosion."
+  topics: [regimes]
+  units: [events]
+  access: free
+  coverage: "Worldwide, 2000s–present"
+  keywords: [democratic erosion, backsliding, executive aggrandizement, events]
+
+# ═══ CONFLICT, TERRORISM & PROTEST ═══
+
+- name: Uppsala Conflict Data Program
+  abbr: UCDP
+  url: https://ucdp.uu.se/downloads/
+  description: "The leading source on organized violence: armed conflicts, battle deaths, non-state conflict, one-sided violence, and geocoded events. Includes the UCDP/PRIO Armed Conflict Dataset."
+  topics: [conflict]
+  units: [events, countries]
+  access: free
+  coverage: "Worldwide, 1946–present"
+  keywords: [civil war, armed conflict, battle deaths, war, one-sided violence, ged, georeferenced events, ucdp/prio, interstate war]
+
+- name: PRIO Data
+  url: https://www.prio.org/data
+  description: "Peace Research Institute Oslo datasets, including battle deaths and the UCDP/PRIO Armed Conflict Dataset."
+  topics: [conflict]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1946–present"
+  keywords: [battle deaths, armed conflict, civil war, peace]
+
+- name: Threat and Imposition of Sanctions
+  abbr: TIES
+  url: https://sanctions.web.unc.edu/
+  description: "Cases of economic sanctions threatened or imposed between countries."
+  topics: [conflict, economy]
+  units: [events]
+  access: free
+  coverage: "Worldwide, 1945–2005"
+  keywords: [sanctions, economic coercion, foreign policy, embargo]
+
+- name: Correlates of War
+  abbr: COW
+  url: https://correlatesofwar.org/
+  description: "Classic IR datasets: wars, militarized interstate disputes (MIDs), alliances, national material capabilities (CINC), trade, IGOs, and more."
+  topics: [conflict]
+  units: [countries, events]
+  access: free
+  coverage: "Worldwide, 1816–present"
+  keywords: [war, interstate war, militarized disputes, mids, alliances, cinc, military capabilities, dyads, igos, state system, civil war, intrastate war]
+
+- name: IISS Armed Conflict Survey
+  url: https://www.iiss.org/publications/armed-conflict-survey/
+  description: "Annual analysis of armed conflicts worldwide from the International Institute for Strategic Studies."
+  topics: [conflict]
+  units: [countries]
+  access: library
+  coverage: "Worldwide, recent years"
+  keywords: [armed conflict, war, security, civil war]
+  note: "Subscription; check the OU Libraries A–Z database list."
+
+- name: Our World in Data — War and Peace
+  url: https://ourworldindata.org/war-and-peace
+  description: "Charts and downloadable data on conflict, violence, war, and other violent deaths (see related topics under 'Violence and War')."
+  topics: [conflict]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, long run"
+  keywords: [war deaths, homicide, terrorism, violence, beginner friendly, civil war]
+
+- name: Armed Conflict Location & Event Data
+  abbr: ACLED
+  url: https://acleddata.com/
+  description: "Dates, actors, types of violence, locations, and fatalities for reported political violence and protest events worldwide."
+  topics: [conflict]
+  units: [events]
+  access: registration
+  coverage: "Worldwide (Africa from 1997; most regions from 2018)"
+  keywords: [protests, riots, political violence, battles, violence against civilians, events, geocoded, fatalities, civil war]
+
+- name: Integrated Network for Societal Conflict Research
+  abbr: INSCR
+  url: https://www.systemicpeace.org/inscrdata.html
+  description: "Center for Systemic Peace datasets: Major Episodes of Political Violence, coups, state fragility, and Polity."
+  topics: [conflict, regimes]
+  units: [countries, events]
+  access: free
+  coverage: "Worldwide, 1946–2018"
+  keywords: [coups, political violence, state fragility, polity, armed conflict, civil war, ethnic war]
+
+- name: Global Terrorism Database
+  abbr: GTD
+  url: https://www.start.umd.edu/data-tools/GTD
+  description: "Over 200,000 terrorist attacks worldwide, with date, location, perpetrator, weapon, target, and casualties."
+  topics: [conflict]
+  units: [events]
+  access: registration
+  coverage: "Worldwide, 1970–2020"
+  keywords: [terrorism, attacks, casualties, perpetrators, targets, bombings]
+
+- name: START Datasets
+  abbr: START
+  url: https://www.start.umd.edu/data-and-tools/start-datasets
+  description: "Collections from the National Consortium for the Study of Terrorism (home of the GTD): terrorist organizations, U.S. extremists, ethnic group organizations in the Middle East, and opinion in Muslim-majority countries."
+  topics: [conflict]
+  units: [events, officials]
+  access: free
+  coverage: "Worldwide"
+  keywords: [terrorism, extremism, radicalization, terrorist organizations, profiles]
+
+- name: SIPRI Databases
+  abbr: SIPRI
+  url: https://www.sipri.org/databases
+  description: "Arms transfers, arms industry, and military expenditure for every country."
+  topics: [conflict]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1949–present"
+  keywords: [military spending, defense spending, arms trade, arms transfers, weapons]
+
+- name: GDELT Project
+  abbr: GDELT
+  url: https://www.gdeltproject.org/
+  description: "Machine-coded event data from news reports worldwide, including protest and conflict events."
+  topics: [conflict]
+  units: [events]
+  access: free
+  coverage: "Worldwide, 1979–present"
+  keywords: [event data, news, protest, conflict, cooperation, big data]
+  note: "Very large: the full download is about 100 GB. Use filtered extracts."
+
+- name: Computational Event Data System
+  url: https://parusanalytics.com/eventdata/index.html
+  description: "Automated coding of English-language news into political event data, focused on the Middle East, Balkans, and West Africa."
+  topics: [conflict]
+  units: [events]
+  access: free
+  coverage: "Middle East, Balkans, West Africa"
+  keywords: [event data, automated coding, news]
+
+- name: XSub — Cross-National Subnational Violence
+  abbr: XSub
+  url: https://cross-sub.org/
+  description: "Subnational event data on armed conflict and contention around the world, in common formats."
+  topics: [conflict]
+  units: [events]
+  access: free
+  coverage: "~150 countries"
+  keywords: [subnational violence, event data, armed conflict, geocoded]
+
+- name: Cline Center Historical Phoenix Event Data
+  url: https://databank.illinois.edu/datasets/IDB-0647142
+  description: "Several million events extracted from 17.5 million news stories, documenting the actors, locations, and issues in conflict, cooperation, and communication."
+  topics: [conflict]
+  units: [events]
+  access: free
+  coverage: "Worldwide, 1945–2019"
+  keywords: [event data, news, cooperation, conflict, historical]
+
+- name: Minorities at Risk
+  abbr: MAR
+  url: http://www.mar.umd.edu/mar_data.asp
+  description: "Status and conflicts of politically active communal groups in all countries with populations of at least 500,000."
+  topics: [conflict]
+  units: [people, countries]
+  access: free
+  coverage: "Worldwide, 1945–2006"
+  keywords: [ethnic groups, minorities, discrimination, ethnic conflict, rebellion, communal groups, civil war]
+
+- name: Carnegie Global Protest Tracker
+  url: https://carnegieendowment.org/features/global-protest-tracker
+  description: "Significant antigovernment protests worldwide — triggers, size, duration, and outcomes."
+  topics: [conflict]
+  units: [events]
+  access: browse
+  coverage: "Worldwide, 2017–present"
+  keywords: [protests, demonstrations, social movements, antigovernment protest]
+
+# ═══ MIGRATION & REFUGEES ═══
+
+- name: U.S. Census Bureau — Foreign-Born Population
+  url: https://www.census.gov/topics/population/foreign-born.html
+  description: "Census data on the foreign-born population of the U.S."
+  topics: [migration, us-demographics]
+  units: [states, people]
+  access: free
+  coverage: "United States"
+  keywords: [immigrants, foreign born, immigration, citizenship]
+  links:
+    - { label: Migration / geographic mobility, url: "https://www.census.gov/topics/population/migration.html" }
+
+- name: California Department of Finance — Demographics
+  url: https://dof.ca.gov/forecasting/demographics/
+  description: "California data on migration (movement within a country or state) and immigration (movement between countries)."
+  topics: [migration, us-states]
+  units: [states]
+  access: free
+  coverage: "California"
+  keywords: [migration, immigration, california, population estimates]
+
+- name: Migration Policy Institute Data Hub
+  abbr: MPI
+  url: https://www.migrationpolicy.org/programs/migration-data-hub
+  description: "International migration statistics and remittances, plus U.S. immigration statistics by state and DACA data."
+  topics: [migration]
+  units: [countries, states]
+  access: free
+  coverage: "United States and worldwide"
+  keywords: [immigration, remittances, daca, immigrants by state, unauthorized immigrants]
+
+- name: IMPIC — Immigration Policies in Comparison
+  abbr: IMPIC
+  url: http://www.impic-project.eu/
+  description: "Indices measuring how restrictive immigration policies are in OECD countries."
+  topics: [migration]
+  units: [countries, policies]
+  access: free
+  coverage: "33 OECD countries, 1980–2010"
+  keywords: [immigration policy, restrictiveness, asylum, family reunification, labor migration]
+
+- name: Migration Data Portal
+  url: https://www.migrationdataportal.org/
+  description: "Global migration statistics — migrant stocks, gender and migration, human trafficking, smuggling, and more."
+  topics: [migration]
+  units: [countries]
+  access: free
+  coverage: "Worldwide"
+  keywords: [migrant stock, trafficking, smuggling, migration flows, iom]
+
+- name: World Bank Migration and Remittances Data
+  url: https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues/brief/migration-remittances-data
+  description: "Annual remittances, bilateral migration matrices, and migration snapshots for all countries, regions, and income groups."
+  topics: [migration, economy]
+  units: [countries]
+  access: free
+  coverage: "Worldwide"
+  keywords: [remittances, bilateral migration, diaspora]
+  note: "The World Bank reorganized its site in 2025; if this page doesn't load, search 'remittances' at data.worldbank.org."
+
+- name: OECD International Migration Database
+  url: https://data-explorer.oecd.org/
+  description: "Inflows of foreign population by nationality and other migration indicators for OECD countries. Search 'migration' in the OECD Data Explorer."
+  topics: [migration]
+  units: [countries]
+  access: free
+  coverage: "OECD countries"
+  keywords: [immigration inflows, foreign population, nationality, oecd]
+
+- name: Statistics Canada — Immigration and Ethnocultural Diversity
+  url: https://www.statcan.gc.ca/en/subjects-start/immigration_and_ethnocultural_diversity
+  description: "Canadian statistics on immigrants and ethnocultural diversity."
+  topics: [migration]
+  units: [people]
+  access: free
+  coverage: "Canada"
+  keywords: [canada, immigration, ethnicity, diversity]
+
+- name: DHS Immigration Statistics
+  url: https://ohss.dhs.gov/
+  description: "Official U.S. data on immigrant and nonimmigrant admissions, refugees and asylees, naturalizations, and border enforcement."
+  topics: [migration]
+  units: [states]
+  access: free
+  coverage: "United States"
+  keywords: [green cards, refugees, asylum, deportations, border, naturalization, visas]
+
+- name: UNHCR Refugee Data
+  abbr: UNHCR
+  url: https://www.unhcr.org/refugee-statistics/
+  description: "Refugees, asylum seekers, and displaced people worldwide, plus data on current emergencies."
+  topics: [migration]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1951–present"
+  keywords: [refugees, asylum seekers, displacement, idps, forced migration]
+  links:
+    - { label: Current emergencies, url: "https://data.unhcr.org/en/situations" }
+
+- name: UN International Migrant Stock
+  url: https://www.un.org/development/desa/pd/content/international-migrant-stock
+  description: "UN Population Division estimates of international migrant stocks and flows."
+  topics: [migration]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1990–present"
+  keywords: [migrant stock, international migration, un, flows]
+
+- name: Citizenship Rights of Immigrants (WZB)
+  url: https://www.wzb.eu/en/node/350/subpage/12393
+  description: "Classifies policies on immigrants' rights as more or less restrictive."
+  topics: [migration]
+  units: [countries, policies]
+  access: free
+  coverage: "Western Europe"
+  keywords: [citizenship, immigrant rights, integration, naturalization]
+
+# ═══ TRADE & ECONOMY ═══
+
+- name: IMF Data
+  abbr: IMF
+  url: https://data.imf.org/
+  description: "Investment flows, money, economic output, commodity prices, exchange rates, public finances, and public and private debt."
+  topics: [economy]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1948–present"
+  keywords: [gdp, inflation, exchange rates, debt, fiscal, government spending, commodity prices, balance of payments, world economic outlook]
+
+- name: OECD Data Explorer
+  abbr: OECD
+  url: https://data-explorer.oecd.org/
+  description: "OECD statistics: agriculture, environment, social spending, labor markets, national accounts, trade, FDI, and industry-level data."
+  topics: [economy, country-info, welfare]
+  units: [countries]
+  access: free
+  coverage: "OECD members (38) and partners"
+  keywords: [social spending, unemployment, labor market, tax, education, oecd, national accounts]
+
+- name: UN Comtrade
+  url: https://comtradeplus.un.org/
+  description: "Bilateral trade by commodity — especially useful when you need trade in specific goods between two countries."
+  topics: [economy]
+  units: [countries]
+  access: registration
+  coverage: "Worldwide, 1962–present"
+  keywords: [trade, imports, exports, bilateral trade, commodities, dyads]
+
+- name: UNCTADstat
+  url: https://unctadstat.unctad.org/EN/
+  description: "Foreign direct investment flows and stocks, trade, and international investment agreements."
+  topics: [economy]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1970–present"
+  keywords: [fdi, foreign direct investment, investment agreements, trade]
+
+- name: World Development Indicators
+  abbr: WDI
+  url: https://databank.worldbank.org/source/world-development-indicators
+  description: "The World Bank's flagship collection of comparable statistics on development — GDP, poverty, health, education, population, environment, and more."
+  topics: [economy, country-info]
+  units: [countries]
+  access: free
+  coverage: "~217 economies, 1960–present"
+  keywords: [gdp, gdp per capita, poverty, population, life expectancy, education, inequality, gini, trade openness, development, beginner friendly]
+
+- name: World Integrated Trade Solution
+  abbr: WITS
+  url: https://wits.worldbank.org/
+  description: "Merchandise trade, tariffs, and non-tariff measures."
+  topics: [economy]
+  units: [countries]
+  access: free
+  coverage: "Worldwide"
+  keywords: [tariffs, trade, non-tariff barriers, protectionism]
+
+- name: Our World in Data
+  abbr: OWID
+  url: https://ourworldindata.org/
+  description: "Clean, accessible data on trade, energy, environment, growth, poverty, inequality, health, and much more, with charts and one-click downloads."
+  topics: [economy, environment, health, country-info]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, long run"
+  keywords: [gdp, poverty, inequality, energy, co2, life expectancy, charts, beginner friendly]
+
+- name: Penn World Table
+  abbr: PWT
+  url: https://www.rug.nl/ggdc/productivity/pwt/
+  description: "Comparable income, output, inputs, and productivity across countries."
+  topics: [economy, country-info]
+  units: [countries]
+  access: free
+  coverage: "~185 countries, 1950–2023"
+  keywords: [gdp, real gdp, ppp, productivity, capital, growth]
+
+# ═══ WELFARE STATE & SOCIAL POLICY ═══
+
+- name: Social Policy Indicator Database
+  abbr: SPIN
+  url: https://www.sofi.su.se/spin/
+  description: "Comparative data on social rights and duties of citizens — pensions, sickness, unemployment, family benefits."
+  topics: [welfare]
+  units: [countries, policies]
+  access: free
+  coverage: "~34 countries, 1930–present"
+  keywords: [social insurance, pensions, unemployment benefits, family policy, replacement rates]
+
+- name: Comparative Welfare Entitlements Dataset
+  abbr: CWED
+  url: http://cwed2.org/
+  description: "Structure and generosity of social insurance benefits (unemployment, sickness, pensions)."
+  topics: [welfare]
+  units: [countries, policies]
+  access: free
+  coverage: "33 countries, 1970s–2010s"
+  keywords: [welfare generosity, decommodification, replacement rates, social insurance]
+
+- name: CSB Minimum Income Protection Indicators
+  abbr: CSB-MIPI
+  url: https://www.uantwerpen.be/en/research-groups/csb/
+  description: "Minimum income protection provisions in Europe and the United States."
+  topics: [welfare]
+  units: [countries, policies]
+  access: free
+  coverage: "Europe and United States"
+  keywords: [minimum income, social assistance, poverty, safety net]
+  note: "The old direct link died; the data are maintained by the University of Antwerp's Centre for Social Policy (search 'MIPI' on their site)."
+
+- name: Comparative Unemployment Benefit Conditions & Sanctions Dataset
+  url: https://benefitconditionality.weebly.com/
+  description: "Strictness of job-search requirements and benefit sanctions in 21 advanced democracies."
+  topics: [welfare]
+  units: [countries, policies]
+  access: free
+  coverage: "21 advanced democracies, 1980–2012"
+  keywords: [unemployment benefits, conditionality, sanctions, activation, labor market policy]
+
+- name: Huber & Stephens Latin America and Caribbean Welfare Data
+  url: https://huberandstephens.web.unc.edu/common-works/data/
+  description: "Comparative welfare state and social policy data for Latin America (and OECD countries)."
+  topics: [welfare]
+  units: [countries]
+  access: free
+  coverage: "Latin America & OECD"
+  keywords: [social spending, latin america, welfare state, education spending, health spending]
+
+- name: OECD Benefits and Wages
+  url: https://www.oecd.org/en/topics/sub-issues/benefits-and-wages.html
+  description: "Tax-benefit models and indicators on benefit levels, wages, and work incentives."
+  topics: [welfare]
+  units: [countries, policies]
+  access: free
+  coverage: "OECD countries"
+  keywords: [benefits, wages, net replacement rates, tax benefit, minimum wage]
+
+- name: International Network on Leave Policies & Research
+  url: https://www.leavenetwork.org/annual-review-reports/
+  description: "Country reports on maternity, paternity, parental, and care leave, plus flexible working rights."
+  topics: [welfare]
+  units: [countries, policies]
+  access: free
+  coverage: "~50 countries, annual"
+  keywords: [parental leave, maternity leave, paternity leave, family policy, flexible work]
+
+# ═══ ENVIRONMENT & CLIMATE ═══
+
+- name: CONSENSUS — Environmental Policy Change
+  url: https://kops.uni-konstanz.de/entities/publication/288a21eb-44e7-4bda-b0aa-a6d9e0b0e840
+  description: "Evolution of clean-air and other environmental policies in 24 advanced democracies."
+  topics: [environment]
+  units: [countries, policies]
+  access: free
+  coverage: "24 democracies, 1976–2005"
+  keywords: [environmental policy, clean air, regulation, policy convergence]
+
+- name: World Bank Environment Data
+  url: https://data.worldbank.org/topic/environment
+  description: "Environmental indicators — emissions, forest area, energy use, water — for all countries."
+  topics: [environment]
+  units: [countries]
+  access: free
+  coverage: "Worldwide, 1960–present"
+  keywords: [co2 emissions, carbon, energy use, forests, pollution, renewable energy]
+
+- name: Environmental Performance Index
+  abbr: EPI
+  url: https://epi.envirocenter.yale.edu/
+  description: "Ranks 180 countries on environmental health and ecosystem vitality indicators."
+  topics: [environment]
+  units: [countries]
+  access: free
+  coverage: "180 countries, 2006–present"
+  keywords: [environmental performance, air quality, biodiversity, climate policy, rankings]
+
+- name: International Environmental Agreements Database
+  abbr: IEA
+  url: https://iea.uoregon.edu/
+  description: "1,300+ multilateral and 2,200+ bilateral environmental agreements, and 90,000+ country membership actions (signature, ratification, entry into force)."
+  topics: [environment, courts]
+  units: [policies, countries]
+  access: free
+  coverage: "Worldwide, 1800s–present"
+  keywords: [treaties, environmental agreements, ratification, international law, kyoto, paris agreement]
+
+- name: ECOLEX
+  url: https://www.ecolex.org/
+  description: "Searchable archive of environmental treaties, legislation, and court decisions."
+  topics: [environment, courts]
+  units: [policies]
+  access: free
+  coverage: "Worldwide"
+  keywords: [environmental law, treaties, legislation, jurisprudence]
+
+- name: CIESIN / NASA SEDAC
+  abbr: CIESIN
+  url: https://www.ciesin.columbia.edu/
+  description: "Columbia University's repository of environmental, population, and geospatial datasets."
+  topics: [environment]
+  units: [countries, portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [geospatial, population density, gis, environment, climate]
+
+- name: Climate Change and African Political Stability
+  abbr: CCAPS
+  url: https://www.strausscenter.org/ccaps/
+  description: "How climate change could affect security in Africa, plus data collections such as the Social Conflict Analysis Database (riots, coups, strikes, unrest)."
+  topics: [environment, conflict]
+  units: [events]
+  access: free
+  coverage: "Africa"
+  keywords: [climate change, africa, social conflict, scad, riots, strikes, climate security]
+
+# ═══ HEALTH ═══
+
+- name: Global Health Data Exchange
+  abbr: GHDx
+  url: https://ghdx.healthdata.org/
+  description: "Catalog of surveys, censuses, vital statistics, and other health data, including Global Burden of Disease results."
+  topics: [health]
+  units: [countries, portal]
+  access: registration
+  coverage: "Worldwide"
+  keywords: [mortality, disease burden, life expectancy, global burden of disease, health surveys]
+
+# ═══ COUNTRY STATISTICS & PROFILES ═══
+
+- name: World Bank Data Catalog
+  url: https://datacatalog.worldbank.org/
+  description: "Every World Bank dataset in one searchable catalog."
+  topics: [country-info, economy]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [world bank, development, catalog]
+
+- name: Eurostat
+  url: https://ec.europa.eu/eurostat
+  description: "Official statistics for the European Union and its member states and regions."
+  topics: [country-info]
+  units: [countries]
+  access: free
+  coverage: "EU, 1950s–present"
+  keywords: [europe, european union, regional statistics, unemployment, gdp]
+
+- name: CIA World Factbook (archived)
+  url: https://www.cia.gov/stories/story/spotlighting-the-world-factbook-as-we-bid-a-fond-farewell/
+  description: "Country profiles — population, government, economy, industries, trade. The CIA discontinued the Factbook in February 2026."
+  topics: [country-info]
+  units: [countries]
+  access: browse
+  coverage: "Worldwide, through 2026"
+  keywords: [country profiles, factbook, population, government type]
+  note: "Discontinued. For current numbers use the World Development Indicators or Our World in Data."
+
+- name: OU Libraries — Research Data Support
+  url: https://oakland.libguides.com/RDS
+  description: "Oakland University Libraries' guide to finding and using data, with help from librarians and access to subscription databases."
+  topics: [search, country-info]
+  units: [portal]
+  access: free
+  coverage: "OU students"
+  keywords: [library, librarian, help, subscription databases, oakland university]
+  links:
+    - { label: OU Libraries A–Z databases, url: "https://oakland.libguides.com/az/databases" }
+
+- name: World Economics and Politics Dataverse
+  abbr: WEP
+  url: https://ncgg.princeton.edu/wep/dataverse.html
+  description: "900+ variables on politics, economics, geography, society, and culture, merged into one country-year file."
+  topics: [country-info, collections]
+  units: [countries]
+  access: free
+  coverage: "Worldwide"
+  keywords: [merged data, country-year panel, political economy]
+
+# ═══ COLLECTIONS OF POLITICAL SCIENCE DATASETS ═══
+
+- name: QoG Data Finder
+  url: https://datafinder.qog.gu.se/
+  description: "Search by variable or concept and see which existing datasets measure it. A great first stop."
+  topics: [collections, search]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [variable search, concepts, find a variable, beginner friendly]
+
+- name: Paul Hensel's International Relations Data Site
+  url: https://www.paulhensel.org/data.html
+  description: "Links to datasets on international conflict, economics, the environment, politics, and society."
+  topics: [collections]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [international relations, links, conflict, territory]
+
+- name: PolData (Erik Gahner Larsen)
+  url: https://github.com/erikgahner/PolData
+  description: "A dataset of political datasets, organized by category: cabinets, citizens, constitutions, institutions, parties and politicians, democracy, economics, elections, IR, media, policy, and elites."
+  topics: [collections]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [list of datasets, catalog]
+
+- name: Poli Sci Data
+  url: https://www.poliscidata.com/
+  description: "Directory of political science data, methods, and replication resources."
+  topics: [collections]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [directory, replication, catalog]
+
+- name: Database of Databases (Lauren Perez)
+  url: https://laurenkperez.com/database-of-databases-1
+  description: "Sources useful for research across the social sciences, broadly defined."
+  topics: [collections]
+  units: [portal]
+  access: free
+  coverage: "Varies"
+  keywords: [list of datasets, social science]
+
+- name: Data Is Plural
+  url: https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit
+  description: "Spreadsheet archive of Jeremy Singer-Vine's newsletter of interesting, often quirky public datasets."
+  topics: [collections, practice]
+  units: [portal]
+  access: free
+  coverage: "Varies"
+  keywords: [interesting datasets, newsletter, ideas]
+
+- name: Jamie Monogan's Dataverse
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ARKOTI
+  description: "Practice data from Political Analysis Using R: U.S. (roll calls, NES, news coverage of drug and energy policy, health lobbying) and international (CSES, democratization and borders, MIDs, Political Terror Scale)."
+  topics: [collections, practice]
+  units: [portal]
+  access: free
+  coverage: "Varies"
+  keywords: [r, practice data, textbook, teaching]
+
+- name: Hercules Interdisciplinary Database
+  url: https://ghum.kuleuven.be/ggs/research/HerculesDB
+  description: "Data spanning economics, law, and political science, from KU Leuven."
+  topics: [collections]
+  units: [portal]
+  access: free
+  coverage: "Varies"
+  keywords: [interdisciplinary, law, economics]
+
+- name: Michelle Dion's Research Bookmarks
+  url: https://bkmrk.michelledion.com/
+  description: "Curated links to 600+ data sources."
+  topics: [collections]
+  units: [portal]
+  access: free
+  coverage: "Varies"
+  keywords: [links, bookmarks, catalog]
+
+# ═══ SEARCH ENGINES & REPOSITORIES ═══
+
+- name: Harvard Dataverse
+  url: https://dataverse.harvard.edu/
+  description: "Where most political scientists post replication data for their articles. Search by author or article title."
+  topics: [search]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [replication data, replication files, articles, journals]
+
+- name: ICPSR
+  abbr: ICPSR
+  url: https://www.icpsr.umich.edu/
+  description: "The largest social science data archive — thousands of surveys and studies with codebooks."
+  topics: [search]
+  units: [portal]
+  access: registration
+  coverage: "Worldwide"
+  keywords: [archive, surveys, codebooks, replication]
+  note: "Some studies are member-only; create an account with your OU email to see what you can download."
+
+- name: Google Dataset Search
+  url: https://datasetsearch.research.google.com/
+  description: "A search engine just for datasets across the web."
+  topics: [search]
+  units: [portal]
+  access: free
+  coverage: "Worldwide"
+  keywords: [search engine, find data]

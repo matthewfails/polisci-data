@@ -1,0 +1,23 @@
+baseURL: https://matthewfails.github.io/polisci-data/
+languageCode: en-us
+title: Political Science Data Finder
+disableKinds: [taxonomy, term, RSS]
+enableRobotsTXT: true
+
+params:
+  description: "A searchable guide to datasets for undergraduate research in political science: find data by topic, variable, or unit of analysis."
+  owner: Matthew Fails
+  owner_url: https://matthewfails.github.io/matthewfails-site/
+  institution: Oakland University
+  # Shown in the footer and on the Start Here page. Update when you review the list.
+  last_reviewed: "October 2026"
+
+menu:
+  main:
+    - { name: Find Data, pageRef: /, weight: 1 }
+    - { name: Start Here, pageRef: /start-here, weight: 2 }
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false

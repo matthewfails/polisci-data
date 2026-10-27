@@ -1,0 +1,17 @@
+name: Monthly link check
+
+# Runs on the 1st of each month (and on demand from the Actions tab).
+# If any link is dead or now redirects to a different website, the run fails
+# and GitHub emails the repo owner. Open the run to see which links.
+on:
+  schedule:
+    - cron: "0 13 1 * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check every URL in sources.yaml
+        run: python3 scripts/check_links.py

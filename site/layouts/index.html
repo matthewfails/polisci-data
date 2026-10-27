@@ -1,0 +1,141 @@
+{{ define "main" }}
+{{- $T := site.Data.topics -}}
+
+{{/* Lookup tables: slug -> label, topic slug -> group id */}}
+{{- $topicLabel := dict -}}{{- $topicGroup := dict -}}
+{{- range $T.groups }}{{ $g := .id }}{{ range .topics }}
+  {{- $topicLabel = merge $topicLabel (dict .slug .label) -}}
+  {{- $topicGroup = merge $topicGroup (dict .slug $g) -}}
+{{- end }}{{ end -}}
+{{- $unitLabel := dict -}}{{- $unitShort := dict -}}
+{{- range $T.units }}{{ $unitLabel = merge $unitLabel (dict .slug .label) }}{{ $unitShort = merge $unitShort (dict .slug (.short | default .label)) }}{{ end -}}
+{{- $accessLabel := dict -}}{{ range $T.access }}{{ $accessLabel = merge $accessLabel (dict .slug .label) }}{{ end -}}
+
+{{/* Validate sources.yaml so a typo fails the build with a readable message instead of silently hiding an entry. */}}
+{{- range $i, $s := site.Data.sources -}}
+  {{- $who := or $s.name (printf "entry #%d" (add $i 1)) -}}
+  {{- range slice "name" "url" "description" "topics" "units" "access" -}}
+    {{- if not (index $s .) }}{{ errorf "sources.yaml: %q is missing %q" $who . }}{{ end -}}
+  {{- end -}}
+  {{- range $s.topics }}{{ if not (index $topicLabel .) }}{{ errorf "sources.yaml: %q uses unknown topic %q (see data/topics.yaml)" $who . }}{{ end }}{{ end -}}
+  {{- range $s.units }}{{ if not (index $unitLabel .) }}{{ errorf "sources.yaml: %q uses unknown unit %q (see data/topics.yaml)" $who . }}{{ end }}{{ end -}}
+  {{- if not (index $accessLabel $s.access) }}{{ errorf "sources.yaml: %q uses unknown access %q (see data/topics.yaml)" $who $s.access }}{{ end -}}
+{{- end -}}
+
+{{- $sources := sort site.Data.sources "name" -}}
+{{- $entries := slice -}}
+{{- range $i, $s := $sources -}}
+  {{- $groups := slice -}}{{ range $s.topics }}{{ $groups = $groups | append (index $topicGroup .) }}{{ end -}}
+  {{- $entries = $entries | append (dict
+      "i" $i
+      "name" $s.name
+      "abbr" ($s.abbr | default "")
+      "desc" $s.description
+      "kw" ($s.keywords | default slice)
+      "cov" ($s.coverage | default "")
+      "topics" $s.topics
+      "groups" ($groups | uniq)
+      "units" $s.units
+      "access" $s.access
+  ) -}}
+{{- end -}}
+
+<div class="finder container">
+  <header class="hero">
+    <h1>{{ site.Title }}</h1>
+    <div class="hero-intro">{{ .Content }}</div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Field">
+    <button class="tab-btn active" type="button" data-tab="all" role="tab" aria-selected="true">All</button>
+    {{- range $T.groups }}
+    <button class="tab-btn" type="button" data-tab="{{ .id }}" role="tab" aria-selected="false">{{ .label }}</button>
+    {{- end }}
+  </nav>
+
+  <div class="layout">
+    <aside class="filters" aria-label="Filters">
+      <label class="filter-label" for="f-q">Search</label>
+      <input id="f-q" type="search" autocomplete="off" placeholder="e.g. turnout, civil war, corruption">
+      <p class="filter-hint">Searches names, descriptions, and variable keywords.</p>
+
+      <details class="more-filters" id="f-more" open>
+      <summary>More filters</summary>
+      <label class="filter-label" for="f-topic">Topic</label>
+      <select id="f-topic">
+        <option value="">All topics</option>
+        {{- range $T.groups }}
+        <optgroup label="{{ .label }}" data-group="{{ .id }}">
+          {{- range .topics }}
+          <option value="{{ .slug }}">{{ .label }}</option>
+          {{- end }}
+        </optgroup>
+        {{- end }}
+      </select>
+
+      <fieldset class="filter-group">
+        <legend class="filter-label">What is one row?</legend>
+        <div class="check-list" id="f-units">
+          {{- range $T.units }}
+          <label class="check-row"><input type="checkbox" value="{{ .slug }}"> <span>{{ .label }}</span></label>
+          {{- end }}
+        </div>
+      </fieldset>
+
+      <fieldset class="filter-group">
+        <legend class="filter-label">Access</legend>
+        <div class="check-list" id="f-access">
+          {{- range $T.access }}
+          <label class="check-row"><input type="checkbox" value="{{ .slug }}"> <span>{{ .label }}</span></label>
+          {{- end }}
+        </div>
+      </fieldset>
+
+      <label class="check-row check-row--solo"><input type="checkbox" id="f-easy"> <span>Beginner-friendly only</span></label>
+      </details>
+
+      <button type="button" class="btn btn-secondary" id="f-reset">Reset filters</button>
+    </aside>
+
+    <section class="results" aria-live="polite">
+      <p class="result-count" id="count">{{ len $entries }} of {{ len $entries }} sources</p>
+      <div class="cards" id="cards">
+        {{- range $i, $s := $sources }}
+        <article class="card" data-i="{{ $i }}" id="{{ $s.name | urlize }}">
+          <h2 class="card-title">
+            <a href="{{ $s.url }}" rel="noopener" target="_blank">{{ $s.name }}</a>
+            {{- with $s.abbr }} <span class="abbr">{{ . }}</span>{{ end }}
+            <span class="access access--{{ $s.access }}">{{ index $accessLabel $s.access }}</span>
+          </h2>
+          <p class="card-desc">{{ $s.description }}</p>
+          <dl class="card-meta">
+            {{- with $s.coverage }}<div><dt>Coverage</dt><dd>{{ . }}</dd></div>{{ end }}
+            {{- $rows := slice }}{{ range $s.units }}{{ if ne . "portal" }}{{ $rows = $rows | append (index $unitShort .) }}{{ end }}{{ end }}
+            {{- if $rows }}
+            <div><dt>One row is</dt><dd>{{ delimit $rows ", " " or " }}</dd></div>
+            {{- else }}
+            <div><dt>Type</dt><dd>portal linking to many datasets</dd></div>
+            {{- end }}
+          </dl>
+          {{- with $s.keywords }}
+          <ul class="chips" aria-label="Keywords">
+            {{- range . }}<li><button type="button" class="chip" data-kw="{{ . }}">{{ . }}</button></li>{{ end }}
+          </ul>
+          {{- end }}
+          <p class="card-foot">
+            {{- range $j, $t := $s.topics }}<button type="button" class="topic-link" data-topic="{{ $t }}">{{ index $topicLabel $t }}</button>{{ end }}
+            {{- range $s.links }}<a class="extra-link" href="{{ .url }}" rel="noopener" target="_blank">{{ .label }} ↗</a>{{ end }}
+          </p>
+          {{- with $s.note }}<p class="card-note">{{ . }}</p>{{ end }}
+        </article>
+        {{- end }}
+      </div>
+      <p class="no-results" id="none" hidden>No sources match. Try fewer words, a broader topic, or <a href="https://datafinder.qog.gu.se/" target="_blank" rel="noopener">the QoG Data Finder</a>.</p>
+    </section>
+  </div>
+</div>
+
+{{ $js := resources.Get "js/finder.js" | minify | fingerprint }}
+<script>window.FINDER_DATA = {{ $entries | jsonify | safeJS }};</script>
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}

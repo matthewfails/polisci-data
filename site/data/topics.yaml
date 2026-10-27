@@ -1,0 +1,60 @@
+# Topics, grouped into the tabs shown at the top of the finder.
+# Every entry in sources.yaml must use slugs from this list (the build fails otherwise).
+# To add a topic: add a line under the right group with a new slug and a label.
+
+groups:
+  - id: us
+    label: U.S. Politics
+    topics:
+      - { slug: us-elections,    label: "Elections & campaigns" }
+      - { slug: us-congress,     label: "Congress & the presidency" }
+      - { slug: us-states,       label: "State politics & policy" }
+      - { slug: us-opinion,      label: "U.S. public opinion" }
+      - { slug: us-demographics, label: "Census, demographics & federal statistics" }
+      - { slug: guns,            label: "Gun laws & gun violence" }
+      - { slug: practice,        label: "Practice data (sports & fun)" }
+
+  - id: world
+    label: Comparative & International
+    topics:
+      - { slug: world-opinion, label: "Public opinion around the world" }
+      - { slug: institutions,  label: "Parliaments, cabinets & electoral systems" }
+      - { slug: parties,       label: "Elections, parties & policy agendas" }
+      - { slug: leaders,       label: "Political leaders" }
+      - { slug: regimes,       label: "Democracy & autocracy" }
+      - { slug: conflict,      label: "Conflict, terrorism & protest" }
+      - { slug: migration,     label: "Migration & refugees" }
+      - { slug: economy,       label: "Trade & economy" }
+      - { slug: welfare,       label: "Welfare state & social policy" }
+      - { slug: environment,   label: "Environment & climate" }
+      - { slug: country-info,  label: "Country statistics & profiles" }
+
+  - id: both
+    label: Courts, Health & Cross-cutting
+    topics:
+      - { slug: courts, label: "Courts, law & constitutions" }
+      - { slug: health, label: "Health" }
+
+  - id: find
+    label: Finding More Data
+    topics:
+      - { slug: collections, label: "Collections of political science datasets" }
+      - { slug: search,      label: "Search engines & repositories" }
+
+# "What is one row?" — the unit of observation. A source can list more than one.
+units:
+  - { slug: people,    label: "Individuals (survey respondents, census records)", short: "a person" }
+  - { slug: countries, label: "Countries (usually country-year)", short: "a country (or country-year)" }
+  - { slug: states,    label: "U.S. states, counties & districts", short: "a U.S. state, county, or district" }
+  - { slug: events,    label: "Events (protests, attacks, battles)", short: "an event" }
+  - { slug: elections, label: "Elections, parties & candidates", short: "an election, party, or candidate" }
+  - { slug: officials, label: "Leaders, legislators, bills & court cases", short: "a leader, legislator, bill, or court case" }
+  - { slug: policies,  label: "Laws, policies & agreements", short: "a law, policy, or agreement" }
+  - { slug: portal,    label: "Portal with many datasets", short: "(portal — many datasets)" }
+
+# How students get the data.
+access:
+  - { slug: free,         label: "Free download" }
+  - { slug: registration, label: "Free, registration required" }
+  - { slug: library,      label: "Through OU Libraries (subscription)" }
+  - { slug: browse,       label: "Browse/tables only (no bulk download)" }
