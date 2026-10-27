@@ -1554,15 +1554,6 @@
   coverage: "Worldwide"
   keywords: [directory, replication, catalog]
 
-- name: Database of Databases (Lauren Perez)
-  url: https://laurenkperez.com/database-of-databases-1
-  description: "Sources useful for research across the social sciences, broadly defined."
-  topics: [collections]
-  units: [portal]
-  access: free
-  coverage: "Varies"
-  keywords: [list of datasets, social science]
-
 - name: Data Is Plural
   url: https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit
   description: "Spreadsheet archive of Jeremy Singer-Vine's newsletter of interesting, often quirky public datasets."

@@ -18,6 +18,7 @@ Everything below was changed or added during the conversion (October 2026). Wort
 | Democracy & Dictatorship | Cheibub's Google Sites page is gone | Bjørnskov–Rode update (extends it to the present) |
 | Party Government Data Set | VU Amsterdam page gone | Seki–Williams update on Harvard Dataverse |
 | OffStats (Auckland) | Decommissioned | **Removed** |
+| Database of Databases (Lauren Perez) | Landing page loads but the database itself is gone | **Removed** |
 | "DemocracyIndicatorsPSBrief" (under Democratic Erosion) | Link text only, no URL survived in the PDF | **Removed**; re-add if you have the file |
 | Policy Agendas Project | Duplicate of Comparative Agendas | Merged into Comparative Agendas |
 | Golder electoral systems (listed twice) | Duplicate | Merged |
