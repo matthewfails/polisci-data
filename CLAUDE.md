@@ -1,6 +1,6 @@
 # CLAUDE.md: data-finder
 
-Searchable guide to political science datasets for undergraduates, built from Matthew Fails's "Data Sources" PDF (Oct 2026). Standalone Hugo site (no theme, no npm) deployed to GitHub Pages; visual style copied from the academic site (`~/matthewfails-site`).
+Live at https://matthewfails.github.io/polisci-data/ (repo matthewfails/polisci-data, published 2026-10-27; linked from the academic site Teaching page). Searchable guide to political science datasets for undergraduates, built from Matthew Fails's "Data Sources" PDF (Oct 2026). Standalone Hugo site (no theme, no npm) deployed to GitHub Pages; visual style copied from the academic site (`~/matthewfails-site`).
 
 ## Layout
 - `site/data/sources.yaml`: all entries (single source of truth; owner edits this on github.com)
