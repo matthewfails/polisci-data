@@ -37,7 +37,7 @@
 
 - name: Cooperative Election Study
   abbr: CES / CCES
-  url: https://cces.gov.harvard.edu/
+  url: https://tischcollege.tufts.edu/research-faculty/research-centers/cooperative-election-study
   description: "Very large (50,000+ respondents) online survey run by YouGov each fall. A pre-election wave covers attitudes, demographics, and vote intentions; a post-election wave covers how people voted. Large enough to study individual states and congressional districts."
   topics: [us-elections, us-opinion]
   units: [people]
