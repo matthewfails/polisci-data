@@ -5,6 +5,7 @@ A searchable guide to datasets for undergraduate research in political science, 
 - **Live site:** https://matthewfails.github.io/polisci-data/
 - **Repository:** https://github.com/matthewfails/polisci-data
 - **Local copy:** `~/data-finder/` in WSL (Windows path: `\\wsl.localhost\Ubuntu\home\mdf\data-finder`)
+- **Sources:** 159 (as of 2026-11-18)
 - **Linked from:** the Teaching page of [matthewfails.github.io/matthewfails-site](https://matthewfails.github.io/matthewfails-site/teaching/)
 
 ## Where things are
@@ -34,3 +35,12 @@ A searchable guide to datasets for undergraduate research in political science, 
 cd ~/data-finder/site
 hugo server      # then open http://localhost:1313/polisci-data/
 ```
+
+## Change log
+
+| Date | Change |
+|---|---|
+| 2026-10-27 | Site launched with 160 sources converted from the "Data Sources" document (link fixes and removals listed in `REVIEW.md`). Linked from the Teaching page of the academic site. |
+| 2026-10-27 | Removed Database of Databases (landing page loads, but the database itself is gone). 159 sources. |
+| 2026-10-28 | Cooperative Election Study (CES) now links to its new home at Tufts Tisch College. |
+| 2026-11-18 | CSES entry gained a link to the new CSES Data Playground (explore the data and download country aggregates in the browser); also tagged as country-level and beginner-friendly. |
