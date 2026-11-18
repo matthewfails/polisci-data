@@ -676,12 +676,14 @@
 - name: Comparative Study of Electoral Systems
   abbr: CSES
   url: https://cses.org/
-  description: "Post-election surveys from dozens of countries linked to data on each country's electoral institutions — ideal for studying how rules shape voters."
+  description: "Post-election surveys from dozens of countries linked to data on each country's electoral institutions — ideal for studying how rules shape voters. The new Data Playground lets you explore the data in your browser and download country-level aggregates without working with the raw survey files."
   topics: [institutions, world-opinion]
-  units: [people]
+  units: [people, countries]
   access: free
   coverage: "50+ countries, 1996–present"
-  keywords: [electoral systems, voting behavior, accountability, representation, vote choice, satisfaction with democracy]
+  keywords: [electoral systems, voting behavior, accountability, representation, vote choice, satisfaction with democracy, data playground, country aggregates, online analysis, beginner friendly]
+  links:
+    - { label: CSES Data Playground, url: "https://cses.org/data-download/cses-data-playground/" }
 
 - name: Comparative Political Data Set
   abbr: CPDS
